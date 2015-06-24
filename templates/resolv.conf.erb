@@ -1,0 +1,12 @@
+<% if @file_header != false -%>
+	<%- -%><%= @file_header %>
+
+<% end -%>
+<% if @search_domain != false -%>
+	<%- -%># Search domain
+	<%- -%>search <%= @search_domain %>
+
+<% end -%>
+<% @nameservers.each do |server| -%>
+	<%- -%>nameserver <%= server %>
+<% end %>
