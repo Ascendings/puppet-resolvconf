@@ -11,7 +11,7 @@
 
 ##Overview
 
-The hosts module manages your system's resolv.conf file.
+The resolvconf module manages your system's resolv.conf file.
 
 ##Module Description
 
@@ -31,7 +31,7 @@ class { '::resolvconf':
 
 ##Usage
 
-All interaction with the resolvconf module can be done through the main hosts class. This means you can simply (and easily) mess with the options in `::resolvconf` to have full functionality of the module.
+All interaction with the resolvconf module can be done through the main resolvconf class. This means you can simply (and easily) mess with the options in `::resolvconf` to have full functionality of the module.
 
 ###I just want to manage resolvconf, what's the minimum I need?
 
@@ -44,7 +44,7 @@ include '::resolvconf'
 ###I'd like to specify some custom nameservers
 
 ```puppet
-class { '::hosts':
+class { '::resolvconf':
   nameservers => [ '8.8.8.8', '8.8.4.4' ],
 }
 ```
@@ -52,7 +52,7 @@ class { '::hosts':
 ###Well, how about specifying my serach domain?
 
 ```puppet
-class { '::hosts':
+class { '::resolvconf':
   search_domain => 'example.com',
   nameservers   => [ '8.8.8.8', '8.8.4.4' ],
 }
@@ -61,7 +61,7 @@ class { '::hosts':
 ###Awesome! Can I change the file path?
 
 ```puppet
-class { '::hosts':
+class { '::resolvconf':
   file_path     => '/path/to/resolv.conf',
   search_domain => 'example.com',
   nameservers   => [ '8.8.8.8', '8.8.4.4' ],
