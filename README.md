@@ -79,6 +79,7 @@ class { '::resolvconf':
 ####Private Classes
 
 * resolvconf::config: Handles the configuration file.
+* resolvconf::install: Handles installing/removing the package(s).
 
 ###Parameters
 
