@@ -1,9 +1,15 @@
 # See README.md for details.
 class resolvconf::params {
+  # Root group defaults
+  $root_group              = $::osfamily ? {
+    'FreeBSD' => 'wheel',
+    default   => 'root',
+  }
+
   # General config
   $file_path      = '/etc/resolv.conf'
-  $file_owner     = 'root'
-  $file_group     = 'root'
+  $file_owner     = $root_group
+  $file_group     = $root_group
   $file_mode      = '0644'
   $file_template  = 'resolvconf/resolv.conf.erb'
 
